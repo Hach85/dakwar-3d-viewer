@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3D Turntable</title>
+<link rel="stylesheet" href="./viewer.css">
+<header>
+  <strong id="title">3D Turntable</strong>
+  <label>Lighting <select id="mode"></select></label>
+  <label>Exposure <input id="exposure" type="range" min="-2" max="2" step=".1"><output id="ev"></output></label>
+  <button id="resetExposure">Reset EV</button>
+  <label>Camera <select id="preset"><option value="">Choose preset</option></select></label>
+  <button id="resetCamera">Reset camera</button>
+  <button id="rotate" aria-pressed="false">Auto rotate</button>
+  <label id="cutControl" hidden><input id="cut" type="checkbox"> Cutaway
+    <input id="height" type="range" min="0" max="1" step=".01" aria-label="Cutaway height">
+  </label>
+  <button id="fullscreen">Fullscreen</button>
+</header>
+<main id="viewport" aria-label="Interactive 3D model"></main>
+<footer id="status" role="status">Loading model…</footer>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"}}</script>
+<script type="module" src="./viewer.js"></script>
+</html>

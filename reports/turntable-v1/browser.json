@@ -1,0 +1,61 @@
+{
+  "firstFrameMs": 1614.2000000476837,
+  "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+  "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "resources": [
+    {
+      "file": "/viewer.css",
+      "bytes": 886,
+      "ms": 8.399999856948853
+    },
+    {
+      "file": "/viewer.js",
+      "bytes": 9596,
+      "ms": 9
+    },
+    {
+      "file": "/three/examples/jsm/loaders/GLTFLoader.js",
+      "bytes": 109831,
+      "ms": 8.100000143051147
+    },
+    {
+      "file": "/three/build/three.module.js",
+      "bytes": 1284652,
+      "ms": 19.600000143051147
+    },
+    {
+      "file": "/three/examples/jsm/loaders/RGBELoader.js",
+      "bytes": 11377,
+      "ms": 10.700000047683716
+    },
+    {
+      "file": "/three/examples/jsm/controls/OrbitControls.js",
+      "bytes": 32250,
+      "ms": 8.700000047683716
+    },
+    {
+      "file": "/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "bytes": 31768,
+      "ms": 3.700000047683716
+    },
+    {
+      "file": "/model.json",
+      "bytes": 21578,
+      "ms": 2.799999952316284
+    },
+    {
+      "file": "/favicon.ico",
+      "bytes": 0,
+      "ms": 1.5
+    },
+    {
+      "file": "/dakwar-turntable-v1.0.glb",
+      "bytes": 37889264,
+      "ms": 115.59999990463257
+    }
+  ],
+  "drawCalls": 140,
+  "triangles": 89565,
+  "fullscreen": true,
+  "controls": "desktop orbit/pan/zoom, preset/reset, auto-rotation, mode/EV, cutaway, touch orbit"
+}
