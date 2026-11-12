@@ -1,27 +1,19 @@
 # Dakwar 3D Viewer
 
-Standalone interactive architectural 3D presentation for the Dakwar residence, built with Three.js. This project is independent of Cortex Lab.
+The reusable Turntable V1.0 preview lives in [turntable](turntable/). The repository root remains the original viewer entry point.
 
-## Getting started
+## Local preview
 
-The website requires these files in the repository root:
+Run `python -m http.server 8000 --bind 127.0.0.1` from the repository root and open [the local turntable](http://127.0.0.1:8000/turntable/). The preview needs WebGL 2 and loads the pinned Three.js r165 modules from jsDelivr. To work offline, serve the corresponding module files from a local copy of the package and point the import map to them.
 
-- `index.html` — viewer application
-- `dakwar.glb` — complete 3D model with embedded textures (upload separately; GitHub connector does not support this binary upload)
+Drag to orbit, use right drag to pan, and scroll to zoom. On touch screens, drag with one finger to orbit and use two fingers to pan or pinch. The toolbar provides camera presets, reset, rotation, lighting, per-mode exposure, adjustable cutaway, and fullscreen where the browser exposes it.
 
-## Local testing
+## Use another model
 
-Open a terminal in the folder containing both files and run `python -m http.server 8000`, then visit http://localhost:8000.
+Run `python tools/inspect_turntable_glb.py path/to/model.glb --viewer-dir preview` to generate a standalone viewer directory. Serve its parent over HTTP and open `/preview/`. The generator copies the GLB and viewer files and creates a starter configuration with automatic framing and two lighting modes.
 
-## Publish using GitHub Pages
+See the [production workflow](turntable/METHODOLOGY.md) for the configuration contract, model preparation and deployment steps. The [validation report](reports/turntable-v1/validation.md) covers the versioned Dakwar GLB and local browser measurements.
 
-1. Upload `dakwar.glb` to the repository root, next to `index.html`.
-2. Go to **Settings → Pages** on GitHub.
-3. Under **Build and deployment**, choose **Deploy from a branch**, branch **main**, folder **/(root)**, then **Save**.
-4. Visit https://hach85.github.io/dakwar-3d-viewer/ once GitHub reports a successful Pages deployment.
+## Deployment after approval
 
-## Viewer features
-
-Orbit, zoom, pan, overview/front/side/top camera presets, day/evening exposure modes, auto-rotation, fullscreen, and a horizontal ceiling cutaway height slider.
-
-**Note:** The cutaway clips all scene geometry above the horizontal plane; it does not identify only roof geometry. The included GLB and textures become accessible to anyone visiting the public website.
+Publish the complete standalone folder to a static host under a staging path. Verify the deployed GLB, module availability and controls on that URL. On GitHub Pages, serve the approved folder from the existing Pages source and link to its `index.html` from the desired entry point. Switching the root landing page is a separate release step. Keep the prior versioned URL available for rollback.
